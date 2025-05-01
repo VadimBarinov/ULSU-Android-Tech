@@ -34,7 +34,38 @@ class BikeAdapter(
             }
 
             binding.toggleButton.setOnClickListener {
-                listenerFavorite.onClickFavorite(bike)
+
+                val isChecked = binding.toggleButton.isChecked
+                listenerFavorite.onClickFavorite(bike, isChecked)
+                if (isChecked){
+                    bike.isFavorite = true
+                    bike.favoriteIcon = R.drawable.check
+                    binding.iconFavorite.setImageResource(R.drawable.check)
+                }
+                else{
+                    bike.isFavorite = false
+                    bike.favoriteIcon = R.drawable.favorite
+                    binding.iconFavorite.setImageResource(R.drawable.favorite)
+                }
+
+            }
+
+            // TODO нужно исправить. Не работает нажатие
+            binding.iconFavorite.setOnClickListener {
+
+                val isChecked = binding.toggleButton.isChecked
+                listenerFavorite.onClickFavorite(bike, isChecked)
+                if (isChecked){
+                    bike.isFavorite = true
+                    bike.favoriteIcon = R.drawable.check
+                    binding.iconFavorite.setImageResource(R.drawable.check)
+                }
+                else{
+                    bike.isFavorite = false
+                    bike.favoriteIcon = R.drawable.favorite
+                    binding.iconFavorite.setImageResource(R.drawable.favorite)
+                }
+
             }
 
         }
@@ -68,8 +99,10 @@ class BikeAdapter(
 
     @SuppressLint("NotifyDataSetChanged")
     fun addBike(bike: BikeClass) {
-        bikeList.add(bike)
-        notifyDataSetChanged()
+        if (bikeList.firstOrNull{ it.id == bike.id } == null) {
+            bikeList.add(bike)
+            notifyDataSetChanged()
+        }
     }
 
     interface Listener {
@@ -77,7 +110,7 @@ class BikeAdapter(
     }
 
     interface ListenerFavorite {
-        fun onClickFavorite(bike: BikeClass)
+        fun onClickFavorite(bike: BikeClass, isChecked: Boolean)
     }
 
 }

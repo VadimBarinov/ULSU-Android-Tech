@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.velik.R
 import com.example.velik.databinding.FragmentCatalogBinding
@@ -14,6 +15,9 @@ import com.example.velik.db.Bike
 import com.example.velik.db.MainDb
 import com.example.velik.recyclerViewFiles.BikeAdapter
 import com.example.velik.recyclerViewFiles.BikeClass
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class Catalog : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite {
 
@@ -85,12 +89,10 @@ class Catalog : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite {
         Toast.makeText(this.requireActivity(), "карточка", Toast.LENGTH_SHORT).show()
     }
 
-    //TODO удалять/добавлять в избранное
-    //        lifecycleScope.launch {
-    //            здесь нужно писать действия к бд
-    //        }
-    override fun onClickFavorite(bike: BikeClass) {
-        Toast.makeText(this.requireActivity(), "кнопка", Toast.LENGTH_SHORT).show()
+    override fun onClickFavorite(bike: BikeClass, isChecked: Boolean) {
+        CoroutineScope(Dispatchers.IO).launch {
+            db.getDao().changeFavorite(bike.id, isChecked)
+        }
     }
 
 }
