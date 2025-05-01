@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.example.velik.Home"
+        android:name="com.example.velik.fragments.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/catalog"
-        android:name="com.example.velik.Catalog"
+        android:name="com.example.velik.fragments.Catalog"
         android:label="fragment_catalog"
         tools:layout="@layout/fragment_catalog" />
     <fragment
         android:id="@+id/favorite"
-        android:name="com.example.velik.Favorite"
+        android:name="com.example.velik.fragments.Favorite"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/about"
-        android:name="com.example.velik.About"
+        android:name="com.example.velik.fragments.About"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
 </navigation>

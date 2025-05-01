@@ -4,6 +4,7 @@
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/primary_light</item>
          <item name="colorSecondary">@color/cardview_dark_background</item>
+         <item name="colorSecondaryVariant">@color/cardview_light_background</item>
     </style>
 
     <style name="Theme.Velik" parent="Base.Theme.Velik">

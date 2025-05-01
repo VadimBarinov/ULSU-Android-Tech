@@ -4,6 +4,7 @@
     <string name="menu_catalog">Каталог</string>
     <string name="menu_favorite">Избранное</string>
     <string name="menu_about">О себе</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_to_favorite">В избранное</string>
+    <string name="in_favorite">В избранном</string>
+    <string name="empty_favorite">В избранном пока пусто</string>
 </resources>

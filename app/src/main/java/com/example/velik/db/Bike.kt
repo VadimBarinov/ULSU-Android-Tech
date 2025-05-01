@@ -13,8 +13,9 @@ data class Bike (
     @ColumnInfo (name = "name")
     var name: String,
 
+//    Будет храниться ссылка на картинку
     @ColumnInfo (name = "image")
-    var image: String,
+    var image: Int,
 
     @ColumnInfo (name = "description")
     var description: String,

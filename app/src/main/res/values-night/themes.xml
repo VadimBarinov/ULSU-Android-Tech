@@ -4,5 +4,6 @@
         <!-- Customize your dark theme here. -->
          <item name="colorPrimary">@color/primary_night</item>
         <item name="colorSecondary">@color/cardview_light_background</item>
+        <item name="colorSecondaryVariant">@color/cardview_dark_background</item>
     </style>
 </resources>

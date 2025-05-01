@@ -11,8 +11,6 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.velik.databinding.ActivityMainBinding
-import com.example.velik.db.MainDb
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,17 +31,6 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.fragmentContainerView)
         binding.bottomNavigationView.setupWithNavController(navController)
 
-
-//        val db = MainDb.getDb(this)
-//
-//        // ИНИЦИАЛИЗАЦИЯ БД
-//        // временное решение, убрать как только сделаю отображение списка
-//        // при отображении списка будет само инициализироваться!!!
-//        db.getDao().getFirstId().asLiveData().observe(this) {}
-//
-//        lifecycleScope.launch {
-//            // здесь нужно писать действия к бд
-//        }
 
     }
 }
