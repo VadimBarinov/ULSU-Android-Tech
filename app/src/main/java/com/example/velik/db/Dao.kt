@@ -23,7 +23,7 @@ interface Dao {
     @Query("UPDATE Bikes SET favorite=:value WHERE id=:bikeId")
     fun changeFavorite(bikeId: Int?, value: Boolean)
 
-    @Query("SELECT 'id' FROM Bikes LIMIT 1")
-    fun getFirstId(): Flow<Int>
+    @Query("SELECT * FROM Bikes WHERE id=:bikeId LIMIT 1")
+    fun getBikeById(bikeId: Int?): Flow<Bike>
 
 }

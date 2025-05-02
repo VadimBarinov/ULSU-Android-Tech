@@ -38,5 +38,8 @@
         android:name="com.example.velik.fragments.BikeFragment"
         android:label="fragment_bike"
         tools:layout="@layout/fragment_bike" >
+        <argument
+            android:name="bikeId"
+            app:argType="integer" />
     </fragment>
 </navigation>

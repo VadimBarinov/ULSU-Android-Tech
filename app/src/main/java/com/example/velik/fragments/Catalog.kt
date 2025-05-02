@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.asLiveData
 import androidx.navigation.findNavController
@@ -83,8 +84,9 @@ class Catalog : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite {
     }
 
     override fun onClick(bike: BikeClass) {
+        val bundle = bundleOf("bikeId" to bike.id)
         this.requireActivity().findNavController(R.id.fragmentContainerView)
-            .navigate(R.id.action_catalog_to_bikeFragment)
+            .navigate(R.id.action_catalog_to_bikeFragment, bundle)
     }
 
     override fun onClickFavorite(bike: BikeClass, isChecked: Boolean) {

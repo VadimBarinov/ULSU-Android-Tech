@@ -288,14 +288,14 @@
                         android:paddingBottom="6dp">
 
                         <TextView
-                            android:id="@+id/bikeFasteringTitle"
+                            android:id="@+id/bikeFasteningTitle"
                             android:layout_weight="0.5"
                             android:paddingHorizontal="4dp"
                             android:text="@string/bike_fastening"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/bikeFasteringValue"
+                            android:id="@+id/bikeFasteningValue"
                             android:layout_weight="0.5"
                             android:paddingHorizontal="4dp"
                             android:text="@string/bike_fastening"
