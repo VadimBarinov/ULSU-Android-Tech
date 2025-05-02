@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Bike">
+    tools:context=".fragments.Bike"
+    android:background="@color/white">
 
     <FrameLayout
         android:id="@+id/frameLayoutTop"
@@ -27,7 +28,6 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:theme="@style/Base.Theme.Velik"
             android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -36,5 +36,342 @@
             app:srcCompat="@drawable/logo"
             app:tint="?attr/colorSecondary" />
     </FrameLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutTop">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/textBikeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corratec ALLROAD C1"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageBike"
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:layout_marginVertical="20dp"
+                app:srcCompat="@drawable/outleap_rudeway" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iconFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="30dp"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    app:srcCompat="@drawable/favorite"
+                    app:tint="@color/cardview_dark_background" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_btn_toggle"
+                    android:textAllCaps="false"
+                    android:textOff="@string/add_to_favorite"
+                    android:textOn="@string/in_favorite"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/descriptionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/bike_description"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bike_description_example"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="20dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeBrandTitle"
+                            android:text="@string/bike_brand"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikeBrandValue"
+                            android:text="@string/bike_brand"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeSeasonTitle"
+                            android:text="@string/bike_season"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikeSeasonValue"
+                            android:text="@string/bike_season"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeSexTitle"
+                            android:text="@string/bike_sex"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikeSexValue"
+                            android:text="@string/bike_sex"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeAgeTitle"
+                            android:text="@string/bike_age"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikeAgeValue"
+                            android:text="@string/bike_age"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeTypeTitle"
+                            android:text="@string/bike_type"
+                            android:paddingHorizontal="4dp"
+                            android:layout_weight="0.5"
+                            android:textSize="14sp" />
+s
+                        <TextView
+                            android:id="@+id/bikeTypeValue"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_type"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikePurposeTitle"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_purpose"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikePurposeValue"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_purpose"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeFasteringTitle"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_fastening"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikeFasteringValue"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_fastening"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeLevelTitle"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_level"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikeLevelValue"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_level"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeMaterialTitle"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_material"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikeMaterialValue"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_material"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_bottom"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:id="@+id/bikeSpeedsTitle"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_speeds"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bikeSpeedsValue"
+                            android:layout_weight="0.5"
+                            android:text="@string/bike_speeds"
+                            android:paddingHorizontal="4dp"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                </TableLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

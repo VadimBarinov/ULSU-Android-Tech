@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Bicycle</string>
     <string name="menu_home">Главная</string>
     <string name="menu_catalog">Каталог</string>
@@ -7,4 +8,23 @@
     <string name="add_to_favorite">В избранное</string>
     <string name="in_favorite">В избранном</string>
     <string name="empty_favorite">В избранном пока пусто</string>
+
+    // характеристики велосипеда
+    // -----------------------------------------------------------
+    <string name="bike_description">Описание</string>
+    <string name="bike_brand">Бренд</string>
+    <string name="bike_season">Сезон</string>
+    <string name="bike_sex">Пол</string>
+    <string name="bike_age">Возраст</string>
+    <string name="bike_type">Тип велосипеда</string>
+    <string name="bike_purpose">Назначение</string>
+    <string name="bike_fastening">Крепление колеса</string>
+    <string name="bike_level">Уровень оборудования</string>
+    <string name="bike_material">Материал рамы</string>
+    <string name="bike_speeds">Количество скоростей</string>
+
+    <string name="bike_description_example">Radius - продвинутая модель для прогулочного и спортивного катания. Отлично подходит для прогулочного и тренировочного катания, так-же имеет задел для старта в любительских кросс-кантри гонках. Обновленная рама представлена в геометрии MXG (Modern X-Country Geometry), но в отличии от старшей модели Vector, имеет прицел в сторону комфорта: 1) Заваленный угол рулевой в 68 градусов даст хорошую проходимость и плавное управление на скорости; 2) Удлинённый передний треугольник предлагает современную спортивную посадку с улучшенным комфортом; 3) Короткий задний треугольник добавит маневренности и ускорения; 4) Заниженный стендовер для большей свободы в движении над байком и низкий центр масс</string>
+    // -----------------------------------------------------------
+
+
 </resources>
