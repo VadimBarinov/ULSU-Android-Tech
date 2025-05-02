@@ -36,6 +36,17 @@ class Favorite : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite 
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        CoroutineScope(Dispatchers.IO).launch {
+            if (db.getDao().getCountFavorite() == 0) {
+                emptyFavorite()
+            }
+        }
+
+    }
+
     private fun init() {
 
         binding.recyclerViewBikes.layoutManager = LinearLayoutManager(this.requireActivity())
@@ -43,25 +54,24 @@ class Favorite : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite 
 
         db.getDao().getFavoriteBikes().asLiveData().observe(this.requireActivity()) {
 
-            if (it.isEmpty()) {
-                binding.textViewEmptyFavorite.visibility = View.VISIBLE
-            }
-            else {
-                it.forEach { bike ->
-                    var item: BikeClass
-                    if (bike.favorite == true) {
-                        item = addedFavorite(bike)
-                    }
-                    else {
-                        item = notAddedFavorite(bike)
-                    }
-
-                    bikeAdapter.addBike(item)
+            it.forEach { bike ->
+                var item: BikeClass
+                if (bike.favorite == true) {
+                    item = addedFavorite(bike)
                 }
+                else {
+                    item = notAddedFavorite(bike)
+                }
+
+                bikeAdapter.addBike(item)
             }
 
         }
 
+    }
+
+    private fun emptyFavorite() {
+        binding.textViewEmptyFavorite.visibility = View.VISIBLE
     }
 
     private fun addedFavorite(bike: com.example.velik.db.Bike) : BikeClass{

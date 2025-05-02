@@ -17,6 +17,9 @@ interface Dao {
     @Query("SELECT * FROM Bikes WHERE favorite=TRUE")
     fun getFavoriteBikes(): Flow<List<Bike>>
 
+    @Query("SELECT COUNT(*) FROM Bikes WHERE favorite=TRUE")
+    fun getCountFavorite(): Int
+
     @Query("UPDATE Bikes SET favorite=:value WHERE id=:bikeId")
     fun changeFavorite(bikeId: Int?, value: Boolean)
 
