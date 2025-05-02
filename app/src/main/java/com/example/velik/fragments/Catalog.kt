@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.asLiveData
-import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.velik.R
 import com.example.velik.databinding.FragmentCatalogBinding
@@ -83,10 +82,9 @@ class Catalog : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite {
         return item
     }
 
-
-    //TODO здесь будет обработка нажатия
     override fun onClick(bike: BikeClass) {
-        Toast.makeText(this.requireActivity(), "карточка", Toast.LENGTH_SHORT).show()
+        this.requireActivity().findNavController(R.id.fragmentContainerView)
+            .navigate(R.id.action_catalog_to_bikeFragment)
     }
 
     override fun onClickFavorite(bike: BikeClass, isChecked: Boolean) {

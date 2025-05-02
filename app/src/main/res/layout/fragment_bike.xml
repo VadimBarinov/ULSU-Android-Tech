@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Bike"
+    tools:context=".fragments.BikeFragment"
     android:background="@color/white">
 
     <FrameLayout
@@ -17,15 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/labelTextView"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/stackBack"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="40dp"
-            android:text="@string/menu_catalog"
-            android:textColor="?attr/colorSecondary"
-            android:textSize="18sp" />
+            android:layout_gravity="start|center_vertical"
+            android:paddingHorizontal="30dp"
+            app:srcCompat="@drawable/arrow_back"
+            app:tint="?attr/colorSecondary" />
 
         <ImageView
             android:id="@+id/logo"
@@ -51,21 +50,21 @@
             android:orientation="vertical"
             android:paddingHorizontal="20dp">
 
-            <TextView
-                android:id="@+id/textBikeName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Corratec ALLROAD C1"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="18sp" />
-
             <ImageView
                 android:id="@+id/imageBike"
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
                 android:layout_marginVertical="20dp"
                 app:srcCompat="@drawable/outleap_rudeway" />
+
+            <TextView
+                android:id="@+id/textBikeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corratec ALLROAD C1"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="22sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -244,7 +243,7 @@
                             android:paddingHorizontal="4dp"
                             android:layout_weight="0.5"
                             android:textSize="14sp" />
-s
+
                         <TextView
                             android:id="@+id/bikeTypeValue"
                             android:layout_weight="0.5"

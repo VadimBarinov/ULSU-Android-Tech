@@ -5,8 +5,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -30,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         navController = findNavController(R.id.fragmentContainerView)
         binding.bottomNavigationView.setupWithNavController(navController)
-
 
     }
 }
