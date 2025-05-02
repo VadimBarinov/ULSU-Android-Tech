@@ -18,6 +18,7 @@ class BikeAdapter(
     class BikeHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         val binding = BikeItemBinding.bind(item)
+        val updateFavoriteClass = UpdateFavoriteClass()
 
         fun bind(
             bike: BikeClass,
@@ -34,38 +35,16 @@ class BikeAdapter(
             }
 
             binding.toggleButton.setOnClickListener {
-
                 val isChecked = binding.toggleButton.isChecked
                 listenerFavorite.onClickFavorite(bike, isChecked)
-                if (isChecked){
-                    bike.isFavorite = true
-                    bike.favoriteIcon = R.drawable.check
-                    binding.iconFavorite.setImageResource(R.drawable.check)
-                }
-                else{
-                    bike.isFavorite = false
-                    bike.favoriteIcon = R.drawable.favorite
-                    binding.iconFavorite.setImageResource(R.drawable.favorite)
-                }
-
+                updateFavoriteClass.addOrDelete(binding, bike, isChecked)
             }
 
             // TODO нужно исправить. Не работает нажатие
             binding.iconFavorite.setOnClickListener {
-
                 val isChecked = binding.toggleButton.isChecked
                 listenerFavorite.onClickFavorite(bike, isChecked)
-                if (isChecked){
-                    bike.isFavorite = true
-                    bike.favoriteIcon = R.drawable.check
-                    binding.iconFavorite.setImageResource(R.drawable.check)
-                }
-                else{
-                    bike.isFavorite = false
-                    bike.favoriteIcon = R.drawable.favorite
-                    binding.iconFavorite.setImageResource(R.drawable.favorite)
-                }
-
+                updateFavoriteClass.addOrDelete(binding, bike, isChecked)
             }
 
         }
@@ -102,6 +81,21 @@ class BikeAdapter(
         if (bikeList.firstOrNull{ it.id == bike.id } == null) {
             bikeList.add(bike)
             notifyDataSetChanged()
+        }
+    }
+
+    class UpdateFavoriteClass {
+        fun addOrDelete(binding: BikeItemBinding, bike: BikeClass, isChecked: Boolean) {
+            if (isChecked){
+                bike.isFavorite = true
+                bike.favoriteIcon = R.drawable.check
+                binding.iconFavorite.setImageResource(R.drawable.check)
+            }
+            else{
+                bike.isFavorite = false
+                bike.favoriteIcon = R.drawable.favorite
+                binding.iconFavorite.setImageResource(R.drawable.favorite)
+            }
         }
     }
 
