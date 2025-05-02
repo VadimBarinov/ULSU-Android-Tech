@@ -40,8 +40,8 @@ class BikeAdapter(
                 updateFavoriteClass.addOrDelete(binding, bike, isChecked)
             }
 
-            // TODO нужно исправить. Не работает нажатие
             binding.iconFavorite.setOnClickListener {
+                binding.toggleButton.isChecked = !binding.toggleButton.isChecked
                 val isChecked = binding.toggleButton.isChecked
                 listenerFavorite.onClickFavorite(bike, isChecked)
                 updateFavoriteClass.addOrDelete(binding, bike, isChecked)
