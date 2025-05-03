@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginVertical="26dp"
                 app:srcCompat="@drawable/outleap_rudeway" />
 
             <TextView
@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="26dp"
                 android:text="Corratec ALLROAD C1"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="22sp" />
@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="26dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="26dp"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
@@ -134,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="26dp"
                 app:cardCornerRadius="8dp">
 
                 <TableLayout
