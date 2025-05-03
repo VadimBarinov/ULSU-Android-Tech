@@ -12,6 +12,7 @@
     // характеристики велосипеда
     // -----------------------------------------------------------
     <string name="bike_description">Описание</string>
+    <string name="bike_characteristics">Характеристики</string>
     <string name="bike_brand">Бренд</string>
     <string name="bike_season">Сезон</string>
     <string name="bike_sex">Пол</string>
