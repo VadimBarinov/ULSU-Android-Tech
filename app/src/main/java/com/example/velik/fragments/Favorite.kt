@@ -18,6 +18,7 @@ import com.example.velik.recyclerViewFiles.BikeClass
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class Favorite : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite {
 
@@ -42,7 +43,9 @@ class Favorite : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite 
 
         CoroutineScope(Dispatchers.IO).launch {
             if (db.getDao().getCountFavorite() == 0) {
-                emptyFavorite()
+                withContext(Dispatchers.Main) {
+                    emptyFavorite()
+                }
             }
         }
 
