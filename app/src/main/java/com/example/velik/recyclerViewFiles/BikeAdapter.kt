@@ -78,9 +78,14 @@ class BikeAdapter(
 
     @SuppressLint("NotifyDataSetChanged")
     fun addBike(bike: BikeClass) {
-        if (bikeList.firstOrNull{ it.id == bike.id } == null) {
+        var foundBike = bikeList.firstOrNull{ it.id == bike.id }
+        if (foundBike == null) {
             bikeList.add(bike)
             notifyDataSetChanged()
+        }
+        else {
+            foundBike.isFavorite = bike.isFavorite
+            foundBike.favoriteIcon = bike.favoriteIcon
         }
     }
 

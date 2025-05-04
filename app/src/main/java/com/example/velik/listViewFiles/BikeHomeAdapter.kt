@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.velik.R
-import com.example.velik.databinding.BikeItemBinding
 import com.example.velik.databinding.BikeItemHomeBinding
 import com.example.velik.recyclerViewFiles.BikeClass
 
@@ -72,9 +71,14 @@ class BikeHomeAdapter(
 
     @SuppressLint("NotifyDataSetChanged")
     fun addBike(bike: BikeClass) {
-        if (bikeList.firstOrNull{ it.id == bike.id } == null) {
+        var foundBike = bikeList.firstOrNull{ it.id == bike.id }
+        if (foundBike == null) {
             bikeList.add(bike)
             notifyDataSetChanged()
+        }
+        else {
+            foundBike.isFavorite = bike.isFavorite
+            foundBike.favoriteIcon = bike.favoriteIcon
         }
     }
 
