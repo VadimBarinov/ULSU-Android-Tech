@@ -14,6 +14,9 @@ interface Dao {
     @Query("SELECT * FROM Bikes")
     fun getAllBikes(): Flow<List<Bike>>
 
+    @Query("SELECT * FROM Bikes WHERE id=4 OR id=6 LIMIT 2")
+    fun get2Bikes(): Flow<List<Bike>>
+
     @Query("SELECT * FROM Bikes WHERE favorite=TRUE")
     fun getFavoriteBikes(): Flow<List<Bike>>
 
