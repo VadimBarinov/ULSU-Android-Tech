@@ -56,6 +56,8 @@ class Favorite : Fragment(), BikeAdapter.Listener, BikeAdapter.ListenerFavorite 
         binding.recyclerViewBikes.layoutManager = LinearLayoutManager(this.requireActivity())
         binding.recyclerViewBikes.adapter = bikeAdapter
 
+        bikeAdapter.deleteAllBikes()
+
         db.getDao().getFavoriteBikes().asLiveData().observe(this.requireActivity()) {
 
             it.forEach { bike ->

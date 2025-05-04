@@ -89,6 +89,10 @@ class BikeAdapter(
         }
     }
 
+    fun deleteAllBikes() {
+        bikeList.removeAll(bikeList)
+    }
+
     class UpdateFavoriteClass {
         fun addOrDelete(binding: BikeItemBinding, bike: BikeClass, isChecked: Boolean) {
             if (isChecked){
