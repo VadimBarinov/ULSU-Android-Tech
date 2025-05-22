@@ -9,7 +9,4 @@
 - Пользователь может добалять в избранное
 
 ## Демонстрация работы приложения
-<img src="github_images/Светлая_тема.gif" width="320">
-
-## Темная тема
-<img src="github_images/Темная_тема.gif" width="320">
+<img src="github_images/Светлая_тема.gif" width="320">      <img src="github_images/Темная_тема.gif" width="320">
